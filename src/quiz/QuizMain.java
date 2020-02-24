@@ -185,7 +185,7 @@ public class QuizMain extends JFrame implements ActionListener {
 		list = QuizDAO.readIdx();
 		//idx의 순서를 섞어준다.
 		for(int i=0; i<1000; i++) {
-			int ran = new Random().nextInt(list.size()-1)+1;
+			int ran = new Random().nextInt(list.size());
 			int temp = list.get(0);
 			list.set(0,list.get(ran));
 			list.set(ran,temp);
@@ -234,7 +234,6 @@ public class QuizMain extends JFrame implements ActionListener {
 			}
 		}
 		realQuiz = quiz1 + "";
-		System.out.println(realQuiz);
 		quizLabel.setText("<html>"+realQuiz+"</html>");
 		
 		firstLabel.setText("<html>"+list2.get(arr[0])+"</html>");
@@ -254,7 +253,7 @@ public class QuizMain extends JFrame implements ActionListener {
 			setVisible(false);
 		}else if(result==1) {
 			randomIndex++;
-			if(randomIndex < list2.size()) {
+			if(randomIndex < list.size()) {
 				rePrintText();
 			}else {
 				JOptionPane.showMessageDialog(null, "모든 문제를 푸셨습니다.");
