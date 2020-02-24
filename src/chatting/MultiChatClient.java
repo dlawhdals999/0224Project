@@ -95,7 +95,7 @@ public class MultiChatClient extends Frame implements ActionListener, Runnable {
 		setVisible(true);
 		try {
 //			서버에 접속한다.
-			socket = new Socket("192.168.7.25", 10009);
+			socket = new Socket("192.168.7.34", 10009);
 			Label.setText("<html>" + message + "</html>");
 			
 //			서버에 접속했으므로 텍스트 필드와 전송 버튼을 활성화 시키과 메시지를 입력할 수 있게 텍스트 필드로 포커스를 이동시킨다.
@@ -157,7 +157,9 @@ public class MultiChatClient extends Frame implements ActionListener, Runnable {
 			} catch(NoSuchElementException e) {
 				break;
 			}
-		
+			if(str == null) {
+				break;
+			}
 //			서버에서 전송된 메시지를 서버 채팅창에 표시한다.
 			if(str.length() > 0) {
 				message = message  + str+ "<br>";
