@@ -28,7 +28,7 @@ public class ServerThread extends Thread {
 			
 			} 
 		}
-		
+		if (socket != null) {	try {socket.close();} catch (IOException e) {	e.printStackTrace();}}
 		if (serverSocket != null) {	try {serverSocket.close();} catch (IOException e) {	e.printStackTrace();}}
 		
 	}
