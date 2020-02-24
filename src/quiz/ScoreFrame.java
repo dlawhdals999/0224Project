@@ -79,7 +79,8 @@ public class ScoreFrame extends JFrame {
 		Panel3.setSize(scorePanel.getDim());
 
 		scorePanel.setLayout(new FlowLayout());
-
+		QuizDAO.addScore(an, wr);
+		
 		JLabel scoreLabel = new JLabel();
 		String label = "점수 : "+ String.format("%.2f", score);
 		scoreLabel.setText(label);
@@ -101,4 +102,3 @@ public class ScoreFrame extends JFrame {
 
 	}
 
-}
